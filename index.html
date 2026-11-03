@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LS Marmoraria e Porcelanato | Projetos Exclusivos em Mármore, Granito e Porcelanato</title>
+    <meta name="description" content="LS Marmoraria e Porcelanato - Projetos exclusivos sob medida em mármores, granitos, quartzos e porcelanatos. Mais de 7000 projetos realizados. Orçamento personalizado.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f0f0f;
+            --bg-light: #1a1a1a;
+            --text: #f5f5f5;
+            --text-muted: #b0b0b0;
+            --accent: #c9a87c;
+            --accent-light: #e8d5b5;
+            --white: #ffffff;
+            --card: #1e1e1e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 15, 15, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(201, 168, 124, 0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--accent);
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: #000;
+            padding: 0.8rem 1.8rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: var(--accent-light);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+        }
+
+        .btn-outline:hover {
+            background: var(--accent);
+            color: #000;
+        }
+
+        /* Hero */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('images/3zjHz.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--accent);
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .section-number {
+            color: var(--accent);
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--card);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid rgba(201, 168, 124, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .service-card h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        /* Materials */
+        .materials {
+            background: var(--bg-light);
+        }
+
+        .materials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .material-card {
+            background: var(--card);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .material-card h4 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Process */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            counter-reset: step;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .process-step::before {
+            counter-increment: step;
+            content: counter(step, decimal-leading-zero);
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--accent);
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        /* Portfolio */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            height: 250px;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 1.5rem;
+            color: white;
+        }
+
+        /* FAQ */
+        .faq-item {
+            border-bottom: 1px solid rgba(201, 168, 124, 0.2);
+            padding: 1.5rem 0;
+        }
+
+        .faq-question {
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+            text-align: center;
+            padding: 5rem 0;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0a0a;
+            padding: 3rem 0 1.5rem;
+            border-top: 1px solid rgba(201, 168, 124, 0.2);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 1.5rem;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .hero-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">LS Marmoraria</div>
+                <ul class="nav-links">
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#materiais">Materiais</a></li>
+                    <li><a href="#portfolio">Portfólio</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+                <a href="https://wa.me/551934900148?text=Olá! Vim pelo site e gostaria de um orçamento." class="btn" target="_blank">Orçamento</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="section-number">01 — Excelência em Pedras</div>
+                <h1>Projetos Exclusivos<br>em Mármore e Porcelanato</h1>
+                <p>Transformamos ambientes com acabamentos de alto padrão. Mais de 7000 projetos realizados com precisão, dedicação e materiais selecionados.</p>
+                <a href="https://wa.me/551934900148?text=Olá! Gostaria de um orçamento para projeto em pedra." class="btn" target="_blank">Solicitar Orçamento</a>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">7000+</div>
+                        <div>Projetos</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">100%</div>
+                        <div>Sob Medida</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">Alto</div>
+                        <div>Padrão</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre">
+        <div class="container">
+            <div class="section-title">
+                <div class="section-number">02 — Quem Somos</div>
+                <h2>LS Marmoraria e Porcelanato</h2>
+                <p>Especialistas em transformar pedras naturais e industrializadas em peças únicas para o seu projeto.</p>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+                <div>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Com experiência consolidada no mercado, a LS Marmoraria e Porcelanato se destaca pela excelência em acabamentos de alto padrão em mármores, granitos, quartzos e porcelanatos.</p>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Atendemos projetos residenciais e comerciais, com parcerias com arquitetos e construtoras. Cada peça é pensada para unir beleza, funcionalidade e durabilidade.</p>
+                    <p style="color: var(--text-muted);">Nossa missão é entregar excelência em cada detalhe, do corte ao acabamento final, sempre com atendimento personalizado e sob medida.</p>
+                </div>
+                <div>
+                    <img src="images/Qv7uf.jpg" alt="Materiais premium" style="width: 100%; border-radius: 8px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos" style="background: var(--bg-light);">
+        <div class="container">
+            <div class="section-title">
+                <div class="section-number">03 — Serviços</div>
+                <h2>Soluções Completas em Pedra</h2>
+                <p>Do projeto à instalação, oferecemos soluções sob medida para cada ambiente.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Bancadas de Cozinha</h3>
+                    <p>Ilhas, bancadas em L e U, com materiais resistentes e elegantes. Perfeito equilíbrio entre design e funcionalidade.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Lavatórios e Banheiros</h3>
+                    <p>Lavatórios esculpidos, bancadas para cubas e revestimentos sofisticados que transformam o banheiro.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Áreas Gourmet</h3>
+                    <p>Bancadas, fogões à lenha e churrasqueiras em granitos e mármores de alta resistência.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Porcelanato Sob Medida</h3>
+                    <p>Bancadas, nichos e peças em porcelanato de alto padrão, com acabamento impecável e durabilidade superior.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Escadas e Revestimentos</h3>
+                    <p>Escadas, soleiras, peitoris e painéis com presença arquitetônica e acabamento preciso.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Projetos Especiais</h3>
+                    <p>Mesas, mobiliário e peças personalizadas para projetos exclusivos e de alto padrão.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="materiais" class="materials">
+        <div class="container">
+            <div class="section-title">
+                <div class="section-number">04 — Materiais</div>
+                <h2>Materiais Selecionados</h2>
+                <p>Orientação técnica para escolher o material ideal para cada ambiente.</p>
+            </div>
+            <div class="materials-grid">
+                <div class="material-card">
+                    <h4>Mármore</h4>
+                    <p>Sofisticação e beleza natural. Ideal para lavatórios, banheiros e destaques internos.</p>
+                </div>
+                <div class="material-card">
+                    <h4>Granito</h4>
+                    <p>Alta resistência e versatilidade. Perfeito para cozinhas, áreas gourmet e áreas de serviço.</p>
+                </div>
+                <div class="material-card">
+                    <h4>Quartzo</h4>
+                    <p>Uniformidade e modernidade. Excelente custo-benefício e baixa manutenção.</p>
+                </div>
+                <div class="material-card">
+                    <h4>Porcelanato</h4>
+                    <p>Durabilidade e design contemporâneo. Grande formato e resistência superior para bancadas e revestimentos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="processo">
+        <div class="container">
+            <div class="section-title">
+                <div class="section-number">05 — Processo</div>
+                <h2>Como Trabalhamos</h2>
+                <p>Do primeiro contato à instalação final, com controle total de qualidade.</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <h3>Orçamento</h3>
+                    <p>Envie fotos, medidas ou projeto via WhatsApp. Orientação inicial gratuita.</p>
+                </div>
+                <div class="process-step">
+                    <h3>Medição</h3>
+                    <p>Medição técnica no local quando necessário para precisão absoluta.</p>
+                </div>
+                <div class="process-step">
+                    <h3>Fabricação</h3>
+                    <p>Produção sob medida com corte, acabamento e controle de qualidade.</p>
+                </div>
+                <div class="process-step">
+                    <h3>Instalação</h3>
+                    <p>Instalação própria com equipe especializada e acabamento impecável.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" style="background: var(--bg-light);">
+        <div class="container">
+            <div class="section-title">
+                <div class="section-number">06 — Portfólio</div>
+                <h2>Projetos Realizados</h2>
+                <p>Veja alguns dos nossos trabalhos. Mais projetos no Instagram.</p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="images/3zjHz.jpg" alt="Cozinha em mármore">
+                    <div class="portfolio-overlay">
+                        <h4>Cozinha Ilha em Mármore</h4>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="images/joRfO.jpg" alt="Banheiro em mármore escuro">
+                    <div class="portfolio-overlay">
+                        <h4>Lavatório de Alto Padrão</h4>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="images/DTHNh.jpg" alt="Área gourmet">
+                    <div class="portfolio-overlay">
+                        <h4>Área Gourmet com Fogão à Lenha</h4>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="images/Qv7uf.jpg" alt="Materiais">
+                    <div class="portfolio-overlay">
+                        <h4>Seleção de Materiais</h4>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="https://www.instagram.com/lsmarmorariaeporcelanato/" class="btn btn-outline" target="_blank">Ver Mais no Instagram</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq">
+        <div class="container">
+            <div class="section-title">
+                <div class="section-number">07 — Dúvidas</div>
+                <h2>Perguntas Frequentes</h2>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                        Vocês fazem instalação própria? <span>+</span>
+                    </div>
+                    <div class="faq-answer">Sim, contamos com equipe própria de instalação para garantir o acabamento e o prazo combinados.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                        Atendem arquitetos e construtoras? <span>+</span>
+                    </div>
+                    <div class="faq-answer">Sim, trabalhamos com parcerias técnicas, leitura de projetos e alinhamento de cronograma.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                        Qual o melhor material para bancada de cozinha? <span>+</span>
+                    </div>
+                    <div class="faq-answer">Depende do uso, estética e manutenção. Granito, quartzo e porcelanato são excelentes opções. Orientamos na escolha.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                        Como solicitar um orçamento? <span>+</span>
+                    </div>
+                    <div class="faq-answer">Envie pelo WhatsApp fotos do ambiente, medidas aproximadas ou projeto. Respondemos rapidamente.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="contato">
+        <div class="container">
+            <h2>Pronto para transformar seu ambiente?</h2>
+            <p style="margin-bottom: 2rem; color: var(--text-muted);">Fale conosco e receba orientação técnica e orçamento personalizado.</p>
+            <a href="https://wa.me/551934900148?text=Olá! Vim pelo site da LS Marmoraria e gostaria de um orçamento." class="btn" target="_blank">Falar no WhatsApp</a>
+            <p style="margin-top: 1.5rem; color: var(--text-muted);">ou siga no <a href="https://www.instagram.com/lsmarmorariaeporcelanato/" style="color: var(--accent);">Instagram</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="logo" style="margin-bottom: 1rem;">LS Marmoraria e Porcelanato</div>
+                    <p style="color: var(--text-muted);">Projetos exclusivos em mármores, granitos, quartzos e porcelanatos.</p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1rem; color: var(--accent);">Contato</h4>
+                    <p><a href="https://wa.me/551934900148" style="color: var(--text); text-decoration: none;">(19) 3490-0148</a></p>
+                    <p><a href="https://www.instagram.com/lsmarmorariaeporcelanato/" style="color: var(--text); text-decoration: none;">@lsmarmorariaeporcelanato</a></p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1rem; color: var(--accent);">Serviços</h4>
+                    <p style="color: var(--text-muted);">Bancadas • Lavatórios<br>Áreas Gourmet • Porcelanato<br>Escadas • Projetos Especiais</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 LS Marmoraria e Porcelanato. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for nav
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
